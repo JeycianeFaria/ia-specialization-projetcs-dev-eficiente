@@ -13,7 +13,7 @@ print(sentence_tokens)
 
 # Faz um pré processamento
 # 1 - Deixa todo o texto em letras minusculas
-# 2 - Remoe qualquer parte alfanumérica
+# 2 - Remove qualquer parte que não seja alfanumérica
 def preprocess(text):
     tokens = nltk.word_tokenize(text.lower())
     return [word for word in tokens if word.isalnum()]
