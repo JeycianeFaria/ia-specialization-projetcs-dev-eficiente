@@ -9,4 +9,5 @@ dependencies = [
     "nltk>=3.9.2",
     "openai>=2.17.0",
     "pydantic>=2.12.5",
+    "scikit-learn>=1.8.0",
 ]

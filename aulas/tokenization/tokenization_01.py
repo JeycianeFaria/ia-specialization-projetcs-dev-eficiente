@@ -5,10 +5,10 @@ nltk.download("punkt_tab")
 text = "Machine learning é um campo da inteligência artificial que permite que computadores aprendam padrões a partir de dados. Sem serem programados explicitamente para cada tarefa."
 
 word_tokens = nltk.word_tokenize(text)
-print(word_tokens)
+print("WORD TOKENIZE: \n", word_tokens)
 
 sentence_tokens = nltk.sent_tokenize(text)
-print(sentence_tokens)
+print("SENTENCE TOKENIZE: \n", sentence_tokens)
 
 
 # Faz um pré processamento
@@ -27,4 +27,4 @@ documents = [
 
 
 preprocessed_docs = [" ".join(preprocess(doc)) for doc in documents]
-print(preprocessed_docs)
+print("WORD TOKENIZE PROCESSED: \n", preprocessed_docs)
