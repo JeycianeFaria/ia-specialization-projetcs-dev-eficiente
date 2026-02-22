@@ -27,12 +27,14 @@ def preprocess(text):
 
 preprocessed_docs = [" ".join(preprocess(doc)) for doc in documents]
 
-
 vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(preprocessed_docs)
 
+# Verificação do tamanho do vocabulario
+vocabulary = vectorizer.get_feature_names_out()
+total_vocabulary = len(vocabulary)
 
-query = "machine learning"
+query = "O que é machine learning?"
 
 
 def search_tfidf(query, vectorizer, tfidf_matrix):
@@ -47,7 +49,7 @@ def search_tfidf(query, vectorizer, tfidf_matrix):
 search_similarities = search_tfidf(query, vectorizer, tfidf_matrix)
 
 
-print(f"top 10 documentos por score de similaridade {query}:")
+print(f"\nTop 5 documentos por score de similaridade para a consulta: '{query}':")
 
-for doc_index, score in search_similarities[:10]:
-    print(f"documento {doc_index}: {documents[doc_index]}")
+for doc_index, score in search_similarities[:5]:
+    print(f"Documento {doc_index}: {documents[doc_index]}")
